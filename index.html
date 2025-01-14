@@ -37,13 +37,13 @@
         <!-- button row -->
         <div class="row my-4">
           <div class="col-4">
-            <button type="button">Rock</button>
+            <button type="button" onclick="playGame('rock')">Rock</button>
           </div>
           <div class="col-4">
-            <button type="button">Paper</button>
+            <button type="button" onclick="playGame('paper')">Paper</button>
           </div>
           <div class="col-4">
-            <button type="button">Scissors</button>
+            <button type="button" onclick="playGame('scissors')">Scissors</button>
           </div>
         </div>
         <!-- main game with cards -->
@@ -53,9 +53,8 @@
               <img src="https://picsum.photos/id/1025/600/400" alt="" class="card-img-top">
               <div class="card-body">
                 <h5 class="card-title" id="score"></h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
+                <p class="card-text" id="userScore">
+                  0
                 </p>
               </div>
             </div>
@@ -68,9 +67,8 @@
               <img src="https://picsum.photos/id/250/600/400" alt="" class="card-img-top">
               <div class="card-body">
                 <h5 class="card-title">Computer's Score</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
+                <p class="card-text" id="computerScore">
+                  0
                 </p>
               </div>
             </div>
@@ -78,7 +76,10 @@
         </div>
         <!-- text of who wins -->
          <div class="result my-auto py-3">Here are the results
-          <div id="results"></div>
+          <div id="results">
+            <h5 id="userSelect"></h5>
+            <h5 id="computerSelect"></h5>
+          </div>
          </div>
          <!-- reset button -->
          <button>Reset</button>
@@ -94,7 +95,7 @@
               <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
               <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
             </ul>
-            <p class="text-center text-body-secondary">© 2024 Company, Inc</p>
+            <p class="text-center text-body-secondary">© Kristen Tsim</p>
           </footer>
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
