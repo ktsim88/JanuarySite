@@ -50,12 +50,10 @@
         <div class="row text-center">
           <div class="col-md-4 col-sm-12 my-auto">
             <div class="card mx-auto" >
-              <img src="https://picsum.photos/id/1025/600/400" alt="" class="card-img-top">
+              <img src="imgs/2.png" alt="" class="card-img-top">
               <div class="card-body">
                 <h5 class="card-title" id="score"></h5>
-                <p class="card-text" id="userScore">
-                  0
-                </p>
+                <p class="card-text" id="userScore"></p>
               </div>
             </div>
           </div>
@@ -64,25 +62,24 @@
           </div>
           <div class="col-md-4 col-sm-12 my-auto">
             <div class="card mx-auto">
-              <img src="https://picsum.photos/id/250/600/400" alt="" class="card-img-top">
+              <img src="imgs/1.png" alt="" class="card-img-top">
               <div class="card-body">
                 <h5 class="card-title">Computer's Score</h5>
-                <p class="card-text" id="computerScore">
-                  0
-                </p>
+                <p class="card-text" id="computerScore"></p>
               </div>
             </div>
           </div>
         </div>
         <!-- text of who wins -->
          <div class="result my-auto py-3">Here are the results
-          <div id="results">
+          <div class="results">
             <h5 id="userSelect"></h5>
             <h5 id="computerSelect"></h5>
+            <h4 id="winner"></h4>
           </div>
          </div>
          <!-- reset button -->
-         <button>Reset</button>
+         <button onclick="resetGame()">Reset</button>
         <!-- container end div -->
       </div>
     </main>
