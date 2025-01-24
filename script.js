@@ -10,53 +10,49 @@ userScore ? document.getElementById('score').innerText = (`${userName}'s Score`)
 const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
 const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
 //codecademy js
+let userCount = document.getElementById('userCount')
+let compCount = document.getElementById('computerCount')
+
+function keepUserScore() {
+  return (userCount + 1 && console.log('User Wins'));
+}
+
+function keepCompScore() {
+  return compCount +1
+}
   function getComputerChoice() {
     const choices = ['rock', 'paper', 'scissors'];
     const randomIndex = Math.floor(Math.random() * choices.length);
     return choices[randomIndex];
   }
-  
+
   function determineWinner(userChoice, computerChoice) {
-    if (userChoice === computerChoice) return "it was a tie";
+    if (userChoice === computerChoice) return (userCount++ && compCount++);
     if (userChoice === "rock") {
       if (computerChoice === "paper") {
-        return "computer won";
+        return keepCompScore();
       } else {
-        return "you won";
+        return keepUserScore();
       }
     }
     if (userChoice === "paper") {
       if (computerChoice === "rock") {
-        return "you won";
+        return keepUserScore();
       } else {
-        return "computer won";
+        return keepCompScore();
       }
     }
     if (userChoice === "scissors") {
       if (computerChoice === "paper") {
-        return "you won";
+        return keepUserScore()
       } else {
-        return "computer won";
+        return keepCompScore();
       }
     }
   }
-function playerScore() {
-    const userScore = document.getElementById('userScore')
-    if (userChoice === getComputerChoice) {
-        return userScore + 1
-    } else if (userChoice === 'scissors' && computerChoice === 'paper') {
-        return userScore + 1
-    } else if (userChoice === 'paper' && computerChoice === 'rock') {
-        return userScore + 1
-    } else if (userChoice === 'rock' && computerChoice === 'scissors') {
-        return userScore + 1
-    } else {
-        return userScore + 0
-    }     
-}
 function playGame(userChoice) {
     const computerChoice = getComputerChoice();
     console.log(`You threw: ${userChoice}`);
     console.log(`The computer threw: ${computerChoice}`);
-    console.log(determineWinner(userChoice, computerChoice))
+  console.log(determineWinner(userChoice, computerChoice))
 }
