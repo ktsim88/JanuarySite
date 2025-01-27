@@ -37,13 +37,19 @@
         <!-- button row -->
         <div class="row my-4">
           <div class="col-4">
-            <button type="button" onclick="playGame('rock')">Rock</button>
+            <button type="button" onclick="playGame('rock')">
+              <img src="imgs/rock.png" alt="rock" width="50%">
+            </button>
           </div>
           <div class="col-4">
-            <button type="button" onclick="playGame('paper')">Paper</button>
+            <button type="button" onclick="playGame('paper')">
+              <img src="imgs/paper.png" alt="" width="50%">
+            </button>
           </div>
           <div class="col-4">
-            <button type="button" onclick="playGame('scissors')">Scissors</button>
+            <button type="button" onclick="playGame('scissors')">
+              <img src="imgs/scissors.png" alt="" width="50%">
+            </button>
           </div>
         </div>
         <!-- main game with cards -->
@@ -52,8 +58,8 @@
             <div class="card mx-auto" >
               <img src="imgs/2.png" alt="" class="card-img-top">
               <div class="card-body">
-                <h5 class="card-title" id="score"></h5>
-                <p class="card-text" id="userCount">0</p>
+                <h5 class="card-title">Your Score</h5>
+                <p class="card-text" id="userScoreDisplay"></p>
               </div>
             </div>
           </div>
@@ -65,7 +71,7 @@
               <img src="imgs/1.png" alt="" class="card-img-top">
               <div class="card-body">
                 <h5 class="card-title">Computer's Score</h5>
-                <p class="card-text" id="userCount">0</p>
+                <p class="card-text" id="compScoreDisplay"></p>
               </div>
             </div>
           </div>
@@ -79,7 +85,7 @@
           </div>
          </div>
          <!-- reset button -->
-         <button onclick="resetGame()">Reset</button>
+         <button onclick="resetGame('reset')">Reset</button>
         <!-- container end div -->
       </div>
     </main>

@@ -2,23 +2,35 @@
 let userName = prompt('Welcome! Who are you?')
 userName ? document.getElementById('greeting').innerText = (`Hello ${userName}!`) : document.getElementById('greeting').innerText = 'Hello!'
 
-//user score
-let userScore = userName
-userScore ? document.getElementById('score').innerText = (`${userName}'s Score`) : document.getElementById('score').innerText = 'Your Score'
 
 // instruction button
 const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
 const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
 //codecademy js
-let userCount = document.getElementById('userCount')
-let compCount = document.getElementById('computerCount')
 
-function keepUserScore() {
-  return (userCount + 1 && console.log('User Wins'));
+//Vars for USerScore
+let userScoreDisplay = document.getElementById('userScoreDisplay')
+let userScore = "0"
+let userSelect = document.getElementById('userSelect')
+
+//vars for computerscore
+let compScore = "0"
+let compScoreDisplay = document.getElementById('compScoreDisplay')
+let compSelect = document.getElementById('compSelect')
+
+
+ let winner = document.getElementById('winner')
+
+function userWins() {
+  userScore++
+  userScoreDisplay.innerText = userScore
+  console.log('User Wins');
 }
 
-function keepCompScore() {
-  return compCount +1
+function compWins() {
+  compScore++
+  compScoreDisplay.innerText = compScore
+  console.log('computer Wins')
 }
   function getComputerChoice() {
     const choices = ['rock', 'paper', 'scissors'];
@@ -27,32 +39,39 @@ function keepCompScore() {
   }
 
   function determineWinner(userChoice, computerChoice) {
-    if (userChoice === computerChoice) return (userCount++ && compCount++);
+    if (userChoice === computerChoice) return (userWins() && compWins());
     if (userChoice === "rock") {
       if (computerChoice === "paper") {
-        return keepCompScore();
+        return compWins();
       } else {
-        return keepUserScore();
+        return userWins();
       }
     }
     if (userChoice === "paper") {
       if (computerChoice === "rock") {
-        return keepUserScore();
+        return userWins();
       } else {
-        return keepCompScore();
+        return compWins();
       }
     }
     if (userChoice === "scissors") {
       if (computerChoice === "paper") {
-        return keepUserScore()
+        return userWins()
       } else {
-        return keepCompScore();
+        return compWins();
       }
     }
   }
 function playGame(userChoice) {
-    const computerChoice = getComputerChoice();
-    console.log(`You threw: ${userChoice}`);
-    console.log(`The computer threw: ${computerChoice}`);
-  console.log(determineWinner(userChoice, computerChoice))
+  const computerChoice = getComputerChoice();
+  
+    userSelect = `You threw: ${userChoice}`;
+    compSelect = `The computer threw: ${computerChoice}`;
+  winner = (determineWinner(userChoice, computerChoice));
+}
+
+//reset game
+function resetGame(reset) {
+  userScore = 0
+  compScore = 0
 }
