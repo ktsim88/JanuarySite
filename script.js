@@ -10,11 +10,11 @@ const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstra
 
 //Vars for USerScore
 let userScoreDisplay = document.getElementById('userScoreDisplay')
-let userScore = "0"
+let userScore = 0
 let userSelect = document.getElementById('userSelect')
 
 //vars for computerscore
-let compScore = "0"
+let compScore = 0
 let compScoreDisplay = document.getElementById('compScoreDisplay')
 let compSelect = document.getElementById('compSelect')
 
@@ -24,13 +24,21 @@ let compSelect = document.getElementById('compSelect')
 function userWins() {
   userScore++
   userScoreDisplay.innerText = userScore
-  console.log('User Wins');
+  winner.innerText = 'User Wins'
 }
 
 function compWins() {
   compScore++
   compScoreDisplay.innerText = compScore
-  console.log('computer Wins')
+  winner.innerText = 'Computer wins this round!'
+}
+
+function tie() {
+  compScore++
+  userScore++
+  userScoreDisplay.innerText = userScore
+  compScoreDisplay.innerText = compScore
+  winner.innerText = 'its a tie!'
 }
   function getComputerChoice() {
     const choices = ['rock', 'paper', 'scissors'];
@@ -39,7 +47,10 @@ function compWins() {
   }
 
   function determineWinner(userChoice, computerChoice) {
-    if (userChoice === computerChoice) return (userWins() && compWins());
+    if (userChoice === computerChoice) {
+      tie();
+      return;
+    }
     if (userChoice === "rock") {
       if (computerChoice === "paper") {
         return compWins();
@@ -71,7 +82,7 @@ function playGame(userChoice) {
 }
 
 //reset game
-function resetGame(reset) {
+function resetGame() {
   userScore = 0
   compScore = 0
 }
