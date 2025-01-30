@@ -56,7 +56,7 @@
         <div class="row text-center">
           <div class="col-md-4 col-sm-12 my-auto">
             <div class="card mx-auto" >
-              <img src="imgs/2.png" alt="" class="card-img-top">
+              <img src="imgs/2.png" alt="" class="card-img-top" id="userImage">
               <div class="card-body">
                 <h5 class="card-title">Your Score</h5>
                 <p class="card-text" id="userScoreDisplay"></p>
@@ -68,7 +68,7 @@
           </div>
           <div class="col-md-4 col-sm-12 my-auto">
             <div class="card mx-auto">
-              <img src="imgs/1.png" alt="" class="card-img-top">
+              <img src="imgs/1.png" alt="" class="card-img-top" id="compImage">
               <div class="card-body">
                 <h5 class="card-title">Computer's Score</h5>
                 <p class="card-text" id="compScoreDisplay"></p>
@@ -79,13 +79,14 @@
         <!-- text of who wins -->
          <div class="result my-auto py-3">Here are the results
           <div class="results">
+            <h2 id="round">Round 1</h2>
             <h5 id="userSelect"></h5>
             <h5 id="computerSelect"></h5>
             <h4 id="winner"></h4>
           </div>
          </div>
          <!-- reset button -->
-         <button onclick="resetGame('reset')">Reset</button>
+         <button onclick="resetGame('reset')" type="reset">Reset</button>
         <!-- container end div -->
       </div>
     </main>

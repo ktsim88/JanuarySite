@@ -16,10 +16,14 @@ let userSelect = document.getElementById('userSelect')
 //vars for computerscore
 let compScore = 0
 let compScoreDisplay = document.getElementById('compScoreDisplay')
-let compSelect = document.getElementById('compSelect')
+let compSelect = document.getElementById('computerSelect')
 
 
- let winner = document.getElementById('winner')
+let winner = document.getElementById('winner')
+// rounds
+let round = 0;
+let roundDisplay = document.getElementById('round'); 
+roundDisplay.innerText = `Round: ${round}/5`;
 
 function userWins() {
   userScore++
@@ -40,6 +44,8 @@ function tie() {
   compScoreDisplay.innerText = compScore
   winner.innerText = 'its a tie!'
 }
+
+
   function getComputerChoice() {
     const choices = ['rock', 'paper', 'scissors'];
     const randomIndex = Math.floor(Math.random() * choices.length);
@@ -76,8 +82,8 @@ function tie() {
 function playGame(userChoice) {
   const computerChoice = getComputerChoice();
   
-    userSelect = `You threw: ${userChoice}`;
-    compSelect = `The computer threw: ${computerChoice}`;
+    userSelect.innerText = `You threw: ${userChoice}`;
+    compSelect.innerText = `The computer threw: ${computerChoice}`;
   winner = (determineWinner(userChoice, computerChoice));
 }
 
@@ -85,4 +91,7 @@ function playGame(userChoice) {
 function resetGame() {
   userScore = 0
   compScore = 0
+  winner.innerText = ''; // Clear winner message
+  userSelect.innerText = '';
+  compSelect.innerText = '';
 }
