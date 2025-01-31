@@ -27,17 +27,21 @@ let winner = document.getElementById('winner')
 let round = 1;
 let roundDisplay = document.getElementById('round'); 
 roundDisplay.innerText = `Round: ${round}/5`;
-
+// game over word
+let finalWinner = document.getElementById('finalWinner')
+// winner functions
 function userWins() {
   userScore++
   userScoreDisplay.innerText = userScore
   winner.innerText = 'User Wins'
+  roundsPlayed()
 }
 
 function compWins() {
   compScore++
   compScoreDisplay.innerText = compScore
   winner.textContent = 'Computer wins this round!'
+  roundsPlayed()
 }
 
 function tie() {
@@ -47,6 +51,7 @@ function tie() {
   userScoreDisplay.innerText = userScore
   compScoreDisplay.innerText = compScore
   winner.innerText = 'its a tie!'
+  roundsPlayed()
 }
 
 function image() {
@@ -100,6 +105,12 @@ function playGame(userChoice) {
     compSelect.innerText = `The computer threw: ${computerChoice}`;
   determineWinner(userChoice, computerChoice);
   image();
+}
+
+// rounds
+function roundsPlayed() {
+  round++
+  roundDisplay.innerText = `Round: ${round}/5`
 }
 
 //reset game
