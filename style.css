@@ -4,6 +4,7 @@
 }
 .card {
     width: 300px;
+    border: dashed 5px black;
 }
 /* images */
 .choices {
@@ -11,10 +12,30 @@
     width: 200px;
 }
 .card-img-top {
-    background-color: rgb(255, 217, 254);
-    height: 300px;
-    width: 300px;
+    background-image: radial-gradient(#d64e4e, #b64c8d);
 }
 .btn {
     background-color: pink;
+}
+/* greeting */
+.intro {
+    background-color: rgba(137, 43, 226, 0.443);
+    border: 2px black dotted;
+
+}
+body {
+    font-family: "apparat-semicond", sans-serif;
+font-weight: 300;
+font-style: normal;
+}
+#winner, #finalWinner {
+    font-family: "baileywick-jf-gothic", sans-serif;
+font-weight: 400;
+font-style: normal;
+}
+.vs {
+    font-family: "rl-aqva", sans-serif;
+font-weight: 900;
+font-style: normal;
+font-size: 100px;
 }

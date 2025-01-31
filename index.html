@@ -16,6 +16,7 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="https://use.typekit.net/jus1hek.css">
     <link rel="stylesheet" href="style.css" />
   </head>
 
@@ -28,10 +29,10 @@
         <!-- intro -->
         <div class="row intro">
           <h1 id="greeting"></h1>
-          <h1>
+          <h1 class="">
             Welcome to Rock, Paper, Scissors!<br>Click on Rock, Paper, or Scissors to begin the game.
           </h1>
-          <a tabindex="0" class="btn btn-lg btn-danger" role="button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="bottom" data-bs-title="Rules" data-bs-content="
+          <a tabindex="0" class="btn btn-lg btn-danger p-3" role="button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="bottom" data-bs-title="Rules" data-bs-content="
           In order to win, rock beats scissors, paper beats rock, and scissors beats paper. Score will be counted automatically. The game will stop when someone reaches three wins. However, if there is a tie, it will tell you to play one more round. Good Luck & have fun playing!">Click Here if you need the rules</a>
         </div>
         <!-- button row -->
@@ -56,7 +57,7 @@
         <div class="row text-center">
           <div class="col-md-4 col-sm-12 my-auto">
             <div class="card mx-auto" >
-              <img src="imgs/user.png" alt="" class="card-img-top" id="userImage">
+              <img src="imgs/panda-user.png" alt="" class="card-img-top" id="userImage">
               <div class="card-body">
                 <h5 class="card-title" id="name"></h5>
                 <p class="card-text" id="userScoreDisplay"></p>
@@ -65,7 +66,7 @@
             </div>
           </div>
           <div class="col-md-4 col-sm-12 text-center my-auto py-3">
-            <h1>VS</h1>
+            <h1 class="vs">VS</h1>
           </div>
           <div class="col-md-4 col-sm-12 my-auto">
             <div class="card mx-auto">
@@ -79,7 +80,7 @@
           </div>
         </div>
         <!-- text of who wins -->
-         <div class="result my-auto py-3">Here are the results
+         <div class="my-auto py-3">Here are the results
           <div class="results">
             <h2 id="round"></h2>
             <h5 id="userSelect"></h5>
