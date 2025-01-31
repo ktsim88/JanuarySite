@@ -24,7 +24,7 @@
       <!-- place navbar here -->
     </header>
     <main>
-      <div class="container text-center">
+      <div class="container text-center my-3">
         <!-- intro -->
         <div class="row intro">
           <h1 id="greeting"></h1>
@@ -37,17 +37,17 @@
         <!-- button row -->
         <div class="row my-4">
           <div class="col-4">
-            <button type="button" onclick="playGame('rock'); updateUserImage('rock')" class="choices">
+            <button type="button" onclick="playGame('rock'); updateUserImage('rock')" class="btn btn-primary choices">
               <img src="imgs/rock.png" alt="rock" width="50%">
             </button>
           </div>
           <div class="col-4">
-            <button type="button" onclick="playGame('paper'); updateUserImage('paper')" class="choices">
+            <button type="button" onclick="playGame('paper'); updateUserImage('paper')" class="btn btn-primary choices">
               <img src="imgs/paper.png" alt="" width="50%">
             </button>
           </div>
           <div class="col-4">
-            <button type="button" onclick="playGame('scissors'); updateUserImage('scissors')" class="choices">
+            <button type="button" onclick="playGame('scissors'); updateUserImage('scissors')" class="btn btn-primary choices">
               <img src="imgs/scissors.png" alt="" width="50%">
             </button>
           </div>
@@ -60,7 +60,7 @@
               <div class="card-body">
                 <h5 class="card-title" id="name"></h5>
                 <p class="card-text" id="userScoreDisplay"></p>
-                <p id="numUserWins"></p>
+                <p id="numUserWins" class="py-2"></p>
               </div>
             </div>
           </div>
@@ -73,7 +73,7 @@
               <div class="card-body">
                 <h5 class="card-title">Computer's Score</h5>
                 <p class="card-text" id="compScoreDisplay"></p>
-                <p id="numCompWins"></p>
+                <p id="numCompWins" class="py-2"></p>
               </div>
             </div>
           </div>
@@ -89,7 +89,7 @@
           </div>
          </div>
          <!-- reset button -->
-         <button onclick="resetGame('reset')" type="reset">Reset</button>
+         <button onclick="resetGame('reset')" type="reset" class="btn reset">Reset</button>
         <!-- container end div -->
       </div>
     </main>

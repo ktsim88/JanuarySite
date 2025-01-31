@@ -2,6 +2,19 @@
     align-items: center;
     text-align: center;
 }
+.card {
+    width: 300px;
+}
+/* images */
+.choices {
+    height: 200px;
+    width: 200px;
+}
 .card-img-top {
-    background-color: black;
+    background-color: rgb(255, 217, 254);
+    height: 300px;
+    width: 300px;
+}
+.btn {
+    background-color: pink;
 }
