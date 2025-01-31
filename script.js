@@ -69,25 +69,36 @@ function tie() {
   compWinsCount++;
   numCompWinsDisplay.innerText = `Wins: ${compWinsCount}`
 }
-  function getComputerChoice() {
-    const choices = ['rock', 'paper', 'scissors'];
-    const randomIndex = Math.floor(Math.random() * choices.length);
-    return choices[randomIndex];
+const getComputerChoice = () => {
+  const randomNumber = Math.floor(Math.random() * 3);
+  if (randomNumber === 0) {
+    compImage.src = 'imgs/rock.png'
+    return 'rock'
+  } else if (randomNumber === 1) {
+    compImage.src = 'imgs/paper.png'
+    return 'paper'
+  } else if (randomNumber === 2) {
+    compImage.src = 'imgs/scissors.png'
+    return 'scissors'
   }
+};
 
-  function determineWinner(userChoice, computerChoice) {
+function determineWinner(userChoice, computerChoice) {
     if (userChoice === computerChoice) {
+      updateUserImage()
       tie();
     } else {
       if (userChoice === "rock") {
         if (computerChoice === "paper") {
           compWins();
         } else {
+          updateUserImage()
           userWins();
         }
       }
       if (userChoice === "paper") {
         if (computerChoice === "rock") {
+          updateUserImage()
           userWins();
         } else {
           compWins();
@@ -95,6 +106,7 @@ function tie() {
       }
       if (userChoice === "scissors") {
         if (computerChoice === "paper") {
+          updateUserImage()
           userWins()
         } else {
           compWins();
@@ -109,7 +121,25 @@ function playGame(userChoice) {
   determineWinner(userChoice, computerChoice);
   gameOver();
 }
-
+// image updater
+function updateUserImage(userChoice) {
+  if (userChoice === 'scissors')
+    userImage.src = 'imgs/scissors.png'
+  else if (userChoice === 'paper') {
+    userImage.src = 'imgs/paper.png'
+  } else if (userChoice === 'rock') {
+    userImage.src = 'imgs/rock.png'
+  }
+}
+function updateComputerImage(computerChoice) {
+  if (computerChoice === 'scissors')
+    compImage.src = 'imgs/scissors.png'
+  else if (computerChoice === 'paper') {
+    compImage.src = 'imgs/paper.png'
+  } else if (computerChoice === 'rock') {
+    compImage.src = 'imgs/rock.png'
+  }
+}
 // rounds
 function roundsPlayed() {
   round++
@@ -117,15 +147,15 @@ function roundsPlayed() {
 }
 // game over 
 function gameOver() {
-  if (userWinsCount >= 3) {
+  if (userWinsCount > 2) {
     finalWinner.innerText = 'Congrats! You won the game! Click Reset to Play Again'
-  } else if (compWinsCount >= 3) {
+  } else if (compWinsCount > 2) {
     finalWinner.innerText = 'Dang! How did you lose against the computer!?! Click Reset to Play Again'
   } else if (userWinsCount === 3 && compWinsCount === 3) {
     finalWinner.innerText = 'Play one more round.'
   }
+  }
 
-}
 
 
 //reset game
@@ -139,8 +169,8 @@ function resetGame() {
   winner.innerText = ''
   userSelect.innerText = ''
   compSelect.innerText = ''
-  userImage.src = "imgs/2.png";  
-  compImage.src = "imgs/1.png";
+  userImage.src = "imgs/user.png";  
+  compImage.src = "imgs/computer.png";
   compWinsCount = 0
   userWinsCount = 0
   finalWinner.innerText = ''
