@@ -33,23 +33,26 @@
             Welcome to Rock, Paper, Scissors!<br>Click on Rock, Paper, or Scissors to begin the game.
           </h1>
           <a tabindex="0" class="btn btn-lg btn-danger p-3" role="button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="bottom" data-bs-title="Rules" data-bs-content="
-          In order to win, rock beats scissors, paper beats rock, and scissors beats paper. Score will be counted automatically. The game will stop when someone reaches three wins. However, if there is a tie, it will tell you to play one more round. Good Luck & have fun playing!">Click Here if you need the rules</a>
+          In order to win, rock beats scissors, paper beats rock, and scissors beats paper. Score will be counted automatically. The game will stop after five rounds. However, if there is a tie, it will tell you to play one more round. Good Luck & have fun playing!">Click Here if you need the rules</a>
         </div>
         <!-- button row -->
         <div class="row my-4">
           <div class="col-4">
             <button type="button" onclick="playGame('rock'); updateUserImage('rock')" class="btn btn-primary choices">
               <img src="imgs/rock.png" alt="rock" width="50%">
+              <h2>Rock</h2>
             </button>
           </div>
           <div class="col-4">
             <button type="button" onclick="playGame('paper'); updateUserImage('paper')" class="btn btn-primary choices">
               <img src="imgs/paper.png" alt="" width="50%">
+              <h2>Paper</h2>
             </button>
           </div>
           <div class="col-4">
             <button type="button" onclick="playGame('scissors'); updateUserImage('scissors')" class="btn btn-primary choices">
               <img src="imgs/scissors.png" alt="" width="50%">
+              <h2>Scissors</h2>
             </button>
           </div>
         </div>

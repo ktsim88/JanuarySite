@@ -147,11 +147,11 @@ function roundsPlayed() {
 }
 // game over 
 function gameOver() {
-  if (userWinsCount > 2) {
+  if ( round === 5 && userWinsCount > 2) {
     finalWinner.innerText = 'Congrats! You won the game! Click Reset to Play Again'
-  } else if (compWinsCount > 2) {
+  } else if (round === 5 && compWinsCount > 2) {
     finalWinner.innerText = 'Dang! How did you lose against the computer!?! Click Reset to Play Again'
-  } else if (userWinsCount === 3 && compWinsCount === 3) {
+  } else if (userWinsCount === 3 && compWinsCount === 3 && round === 5) {
     finalWinner.innerText = 'Play one more round.'
   }
   }

@@ -8,25 +8,34 @@
 }
 /* images */
 .choices {
-    height: 200px;
-    width: 200px;
+    font-family: "rl-aqva", sans-serif;
+font-weight: 900;
+font-style: normal;
+color: black;
 }
+
 .card-img-top {
     background-image: radial-gradient(#d64e4e, #b64c8d);
 }
 .btn {
-    background-color: pink;
+    background-image: radial-gradient(#d64e4e, #b64c8d);
+}
+.btn:hover {
+    background-image: radial-gradient(#b64c8d, #d64e4e);
+    color: white;
 }
 /* greeting */
-.intro {
-    background-color: rgba(137, 43, 226, 0.443);
-    border: 2px black dotted;
+.intro, .results {
+    background-color: rgba(255, 255, 255, 0.443);
+    border: 5px black dotted;
+    padding: 5px;
 
 }
 body {
     font-family: "apparat-semicond", sans-serif;
 font-weight: 300;
 font-style: normal;
+background-color: rgba(179, 255, 239, 0.685);
 }
 #winner, #finalWinner {
     font-family: "baileywick-jf-gothic", sans-serif;
@@ -38,4 +47,12 @@ font-style: normal;
 font-weight: 900;
 font-style: normal;
 font-size: 100px;
+}
+.card-title {
+    background-color: rgba(234, 131, 255, 0.425);
+    padding: 5px;
+    border-radius: 50px;
+}
+.card-body {
+    background-color: blanchedalmond;
 }
